@@ -1,0 +1,210 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --accent: #b8962e;
+    --accent-soft: rgba(184, 150, 46, 0.07);
+    --accent-rule: rgba(184, 150, 46, 0.35);
+    --ink: #1a1a1a;
+    --gray: #555555;
+    --muted: #999999;
+    --rule: #e0e0e0;
+}
+
+body {
+    background: #c8c8c8;
+    color: var(--ink);
+}
+
+.page {
+    width: 210mm;
+    height: 297mm;
+    background: #fff;
+    margin: 24px auto;
+    padding: 14mm 15mm 13mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+}
+
+.cv-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 12px;
+}
+
+.cv-name {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 34pt;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--ink);
+}
+
+.cv-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    margin-left: 18px;
+    outline: 1.5px solid var(--rule);
+    outline-offset: 3px;
+    filter: grayscale(100%);
+}
+
+.info-block {
+    background: var(--accent-soft);
+    border-radius: 3px;
+    padding: 9px 12px;
+    margin-top: 2px;
+}
+
+.info-label-row {
+    font-family: "Raleway", sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.info-label-row svg {
+    width: 12px;
+    height: 12px;
+    fill: var(--ink);
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table td {
+    font-family: "Open Sans", sans-serif;
+    font-size: 9pt;
+    padding: 2.5px 0;
+    vertical-align: top;
+    color: var(--gray);
+}
+
+.info-table td:first-child {
+    font-weight: 600;
+    color: var(--ink);
+    width: 28mm;
+    padding-right: 10px;
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(to right, var(--accent) 0%, var(--rule) 60%, transparent 100%);
+    margin: 12px 0;
+}
+
+.divider-light {
+    border-top: 1px solid var(--rule);
+    margin: 9px 0;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: 36% 64%;
+    gap: 0 24px;
+    flex: 1;
+}
+
+.col-left {
+    border-right: 1px solid var(--rule);
+    padding-right: 22px;
+}
+
+.col-right {
+    padding-left: 2px;
+}
+
+.sec-title {
+    font-family: "Raleway", sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+    margin-top: 17px;
+    padding-left: 8px;
+    border-left: 2.5px solid var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    line-height: 1.4;
+}
+
+.sec-title:first-child { margin-top: 0; }
+
+.sec-title svg {
+    width: 12px;
+    height: 12px;
+    fill: var(--accent);
+}
+
+.body-text {
+    font-family: "Open Sans", sans-serif;
+    font-size: 9pt;
+    line-height: 1.65;
+    color: var(--gray);
+}
+
+.plain-list {
+    list-style: none;
+}
+
+.plain-list li {
+    font-family: "Open Sans", sans-serif;
+    font-size: 9pt;
+    color: var(--gray);
+    line-height: 1.65;
+}
+
+.exp-entry { margin-bottom: 10px; }
+.exp-title { font-family: "Raleway", sans-serif; font-size: 9.5pt; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.exp-meta { font-family: "Open Sans", sans-serif; font-size: 8.5pt; color: var(--gray); }
+.exp-date { font-family: "Raleway", sans-serif; font-size: 8pt; font-style: italic; font-weight: 500; color: var(--accent); white-space: nowrap; }
+
+.edu-entry { margin-bottom: 9px; padding-left: 10px; border-left: 1.5px solid var(--rule); }
+.edu-school { font-family: "Raleway", sans-serif; font-size: 9pt; font-weight: 700; color: var(--ink); margin-bottom: 1px; }
+.edu-degree { font-family: "Open Sans", sans-serif; font-size: 8.5pt; color: var(--gray); }
+.edu-date { font-family: "Raleway", sans-serif; font-size: 7.5pt; font-style: italic; color: var(--accent); margin-top: 2px; }
+
+.page-footer {
+    margin-top: auto;
+    padding-top: 3px;
+    border-top: 1px solid var(--rule);
+}
+
+.footer-name {
+    font-family: "Raleway", sans-serif;
+    font-size: 7.5pt;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+@media print {
+    @page { size: A4; margin: 0; }
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
